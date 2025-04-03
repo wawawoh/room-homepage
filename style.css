@@ -1,0 +1,168 @@
+
+/* GLOBAL STYLES
+------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+body {
+    background-color: hsl(0, 0%, 100%);
+    min-height: 100vh;
+    display: flex;
+    margin:0;
+    justify-content: center;
+    
+    flex-direction: column;
+    font-family: League Spartan;
+    
+}
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+
+
+/* MAIN IMAGE
+------------------------------------- */
+
+nav {
+    visibility: hidden;
+}
+.main_homepage {
+    min-height: 30rem;
+    width: auto;
+    background-image: url(images/mobile-image-hero-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-area: home;
+}
+.logo {
+    display: block;
+    margin: auto;
+    margin-top: clamp(10px, 2rem, 4rem);
+    
+
+}
+
+/* CONTAINER DISCOVER
+------------------------------------- */
+
+
+
+.disover-container, .furniture-container {
+    padding:1rem ;
+
+}
+h1 {
+    /* clamp */
+    font-size: 2rem;
+    margin-bottom: 0;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    
+}
+h2 {
+    letter-spacing: 0.5rem;
+    
+    font-size: clamp(1rem, 3vw, 5rem);
+}
+p {
+    line-height: clamp(1.5rem, 1vw, 3rem);
+    margin-bottom: 1.5rem;
+    color: hsl(0, 0%, 63%);
+    font-size: clamp(1rem, 3vw, 1.3rem);
+}
+button {
+    letter-spacing: 0.5rem;
+    background: none;
+    border: none;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+    color: hsl(0, 0%, 27%);
+}
+
+
+/* IMAGE DARK
+------------------------------------- */
+.dark {
+    grid-area: dark
+}
+
+
+/* IMAGE LIGHT
+------------------------------------- */
+.light {
+    grid-area: light
+}
+
+@media screen AND (min-width:800px) {
+    main {
+        display: flex
+        ;
+        flex-direction: row;
+        flex-grow:1;
+        
+        
+    }
+    .logo {
+        position: absolute;
+        left: 10%;
+        width: 10%;
+        
+    }
+    h1 {
+        font-size: clamp(1.5rem, 4vw, 4rem);
+    }
+    .main_homepage {
+        background-image: url(images/desktop-image-hero-1.jpg);
+        width: 50%;
+        flex-grow: 1;
+    }
+    aside {
+        display: flex;
+        
+
+    }
+    .light, .dark {
+        min-height: 100%;
+        width: auto;
+        background-position: center;
+    }
+    .disover-container {
+         padding: 5rem;
+         max-width: 500px;
+    }
+    .furniture-container {
+        
+        padding: 1.5rem;
+        min-width: 400px;
+        max-height: 248px;
+    }
+    p {
+        font-size: clamp(0.6rem, 3vw, 1rem);
+    }
+    h2 {
+        font-size: clamp(1.2rem, 1vw, 5rem);
+    }
+}
